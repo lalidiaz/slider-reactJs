@@ -8,7 +8,22 @@ function App() {
   const [people, setPeople] = useState(data);
   const [index, setIndex] = useState(0);
 
-  useEffect(() => {}, []);
+  useEffect(() => {
+    const lastIndex = people.length - 1;
+    if (index < 0) {
+      setIndex(lastIndex);
+    }
+    if (index > lastIndex) {
+      setIndex(0);
+    }
+  }, [index, people]);
+
+  useEffect(() => {
+    let slider = setInterval(() => {
+      setIndex(index + 1);
+    }, 3000);
+    return () => clearInterval(slider);
+  }, [index]);
 
   return (
     <section className="section">
@@ -22,6 +37,12 @@ function App() {
           if (personIndex === index) {
             position = 'activeSlide';
           }
+          if (
+            personIndex === index - 1 ||
+            (index === 0 && personIndex === people.length - 1)
+          ) {
+            position = 'lastSlide';
+          }
           return (
             <article className={position} key={id}>
               <img className="person-img" src={image} alt={name} />
@@ -32,10 +53,10 @@ function App() {
             </article>
           );
         })}
-        <button className="prev">
+        <button className="prev" onClick={() => setIndex(index - 1)}>
           <IoIosArrowBack size={40} />
         </button>
-        <button className="next">
+        <button className="next" onClick={() => setIndex(index + 1)}>
           <IoIosArrowForward size={40} />
         </button>
       </div>

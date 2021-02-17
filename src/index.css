@@ -48,7 +48,6 @@ p {
 .section {
   width: 90vw;
   margin: 5rem auto;
-  max-width: 70%;
 }
 
 .title {
@@ -72,7 +71,7 @@ p {
   margin-top: 4rem;
   width: 80vw;
   /* have to have a height */
-  height: 450px;
+  height: 500px;
   max-width: 800px;
   text-align: center;
   position: relative;
@@ -117,8 +116,7 @@ article h4 {
   top: 200px;
   transform: translateY(-50%);
   color: #6964e2;
-  width: 300px;
-  height: 300px;
+
   border: none;
   background-color: transparent;
   cursor: pointer;
@@ -156,4 +154,16 @@ article.lastSlide {
 }
 article.nextSlide {
   transform: translateX(100%);
+}
+
+@media (max-width: 480px) {
+  .text {
+    max-width: 400px;
+    margin: 0 auto;
+    margin-top: 2rem;
+    line-height: 2;
+    font-size: 18px;
+  }
+}
+@media (max-width: 768px) {
 }
