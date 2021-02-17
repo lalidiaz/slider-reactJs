@@ -5,7 +5,7 @@ This is a Slider app.
 
 Topics:
 
-• useEffect() => fetch data. • Conditional Rendering
+• useEffect() • Conditional Rendering
 
 
 ![Slider](https://user-images.githubusercontent.com/60779542/108207784-a598ce80-7141-11eb-9377-2ab437a35b5f.png)
