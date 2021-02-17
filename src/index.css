@@ -1,0 +1,159 @@
+@import url('https://fonts.googleapis.com/css2?family=Questrial&family=Red+Hat+Display&display=swap');
+
+*,
+::after,
+::before {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+body {
+  font-family: 'Red Hat Display', sans-serif;
+  background: white;
+  color: gray;
+  line-height: 1.5;
+  font-size: 0.875rem;
+}
+ul {
+  list-style-type: none;
+}
+a {
+  text-decoration: none;
+}
+h1,
+h2,
+h3,
+h4 {
+  text-transform: capitalize;
+  line-height: 1.25;
+  margin-bottom: 0.75rem;
+}
+h1 {
+  font-size: 3rem;
+}
+h2 {
+  font-size: 2rem;
+}
+h3 {
+  font-size: 1.25rem;
+}
+h4 {
+  font-size: 0.875rem;
+}
+p {
+  margin-bottom: 1.25rem;
+  color: gray;
+}
+
+.section {
+  width: 90vw;
+  margin: 5rem auto;
+  max-width: 70%;
+}
+
+.title {
+  text-align: center;
+  margin-bottom: 2rem;
+}
+.title h2 {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-weight: 500;
+}
+.title span {
+  font-size: 0.85em;
+  color: black;
+  margin-right: 1rem;
+  font-weight: 700;
+}
+.section-center {
+  margin: 0 auto;
+  margin-top: 4rem;
+  width: 80vw;
+  /* have to have a height */
+  height: 450px;
+  max-width: 800px;
+  text-align: center;
+  position: relative;
+  display: flex;
+  overflow: hidden;
+}
+.person-img {
+  border-radius: 50%;
+  margin-bottom: 1rem;
+  width: 150px;
+  height: 150px;
+  object-fit: cover;
+  box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);
+}
+article h4 {
+  text-transform: uppercase;
+  color: black;
+  margin-bottom: 0.25rem;
+}
+.title {
+  text-transform: capitalize;
+  font-size: 22px;
+  margin-bottom: 0.75rem;
+  color: #6964e2;
+  font-weight: 700;
+}
+.text {
+  max-width: 35em;
+  margin: 0 auto;
+  margin-top: 2rem;
+  line-height: 2;
+  font-size: 22px;
+}
+.icon {
+  font-size: 3rem;
+  margin-top: 1rem;
+  color: #6964e2;
+}
+.prev,
+.next {
+  position: absolute;
+  top: 200px;
+  transform: translateY(-50%);
+  color: #6964e2;
+  width: 300px;
+  height: 300px;
+  border: none;
+  background-color: transparent;
+  cursor: pointer;
+  transition: all 0.3s linear;
+  font-size: 30px;
+  outline: transparent;
+}
+.prev:hover,
+.next:hover {
+  color: black;
+}
+.prev {
+  left: 0;
+}
+.next {
+  right: 0;
+}
+
+article {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  opacity: 0;
+  transition: all 0.3s linear;
+}
+
+article.activeSlide {
+  opacity: 1;
+  transform: translateX(0);
+}
+article.lastSlide {
+  transform: translateX(-100%);
+}
+article.nextSlide {
+  transform: translateX(100%);
+}
